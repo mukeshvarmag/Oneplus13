@@ -29,6 +29,7 @@ def automate_login_and_save_cookies():
     try:
         # Navigate to the OnePlus website
         driver.get("https://www.oneplus.in/")
+        time.sleep(10)
 
         # Wait for the "Sign In" button and click it
         WebDriverWait(driver, 60).until(
@@ -65,7 +66,7 @@ def automate_login_and_save_cookies():
         password_field.send_keys("Goneplus@18")
 
         # Wait for login to complete (adjust time if needed)
-        time.sleep(20)
+        time.sleep(45)
 
         # Save cookies after successful login
         save_cookies(driver, "oneplus_cookies.pkl")

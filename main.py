@@ -30,7 +30,7 @@ def reuse_cookies_and_access_site():
 
     try:
         # Step 1: Navigate to the product page
-        url = "https://www.oneplus.in/product/oneplus-supervooc-100w-power-adapter/"
+        url = "https://www.oneplus.in/product/launch/13/oneplus-bonus-drop/"
         driver.get(url)
 
         # Load cookies into the browser session
@@ -70,6 +70,8 @@ def reuse_cookies_and_access_site():
         place_order_button.click()
         print("'Place Order' button clicked successfully!")
 
+        time.sleep(3)
+
         pay_now_button = WebDriverWait(driver, 60).until(
             EC.element_to_be_clickable((By.XPATH, "//div[contains(text(), 'Pay now')]"))
         )
@@ -95,13 +97,13 @@ def reuse_cookies_and_access_site():
         print("UPI ID entered successfully!")
 
         # Step 10: Click on "Verify and Pay" button
-        verify_and_pay_button = WebDriverWait(driver, 20).until(
-            EC.element_to_be_clickable((By.CSS_SELECTOR, '[testid="btn_pay"]'))
-        )
-
-        verify_and_pay_button.click()
-
-        print("'Verify and Pay' button clicked successfully!")
+        # verify_and_pay_button = WebDriverWait(driver, 20).until(
+        #     EC.element_to_be_clickable((By.CSS_SELECTOR, '[testid="btn_pay"]'))
+        # )
+        #
+        # verify_and_pay_button.click()
+        #
+        # print("'Verify and Pay' button clicked successfully!")
 
         # Wait for confirmation page or further actions (adjust time if needed)
         time.sleep(60)
